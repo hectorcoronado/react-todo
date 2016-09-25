@@ -1,4 +1,4 @@
-# React & FoundationCSS boilerplate app
+# React & FoundationCSS Todo app
 ---
 
 ### React app structured with:
