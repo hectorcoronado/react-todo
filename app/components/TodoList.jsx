@@ -3,9 +3,11 @@ var React = require('react'),
 
 import Todo from 'Todo';
 
+var TodoAPI = require('TodoAPI');
+
 export var TodoList = React.createClass({
   render: function () {
-    var {todos} = this.props;
+    var {todos, showCompleted, searchText} = this.props;
     var renderTodos = () => {
       if (!todos.length) {
         return (
@@ -13,7 +15,7 @@ export var TodoList = React.createClass({
         )
       }
 
-      return todos.map( (todo) => {
+      return TodoAPI.filterTodos(todos, showCompleted, searchText).map( (todo) => {
         return (
           <Todo key={todo.id} {...todo}/>
         )
@@ -31,8 +33,6 @@ export var TodoList = React.createClass({
 
 export default connect(
   (state) => {
-    return {
-      todos: state.todos
-    }
+    return state;
   }
 )(TodoList);

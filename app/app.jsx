@@ -12,10 +12,6 @@ store.subscribe( () => {
   console.log('New state:', store.getState());
 });
 
-store.dispatch(actions.addTodo('Sleep.'));
-store.dispatch(actions.setSearchText('sleep'));
-store.dispatch(actions.toggleShowCompleted());
-
 // Initialize Foundation
 $(document).foundation();
 
