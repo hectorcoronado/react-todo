@@ -36,6 +36,7 @@ export var startAddTodo = (text) => {
     };
     var todoRef = firebaseRef.child('todos').push(todo);
 
+    // Return promise to allow for chaining on to 'then' for testing
     return todoRef.then( () => {
       dispatch(addTodo({
         ...todo,
@@ -53,9 +54,25 @@ export var addTodos = (todos) => {
 };
 
 
-export var toggleTodo = (id) => {
+export var updateTodo = (id, updates) => {
   return {
-    type: 'TOGGLE_TODO',
-    id
+    type: 'UPDATE_TODO',
+    id,
+    updates
+  };
+};
+
+
+export var startToggleTodo = (id, completed) => {
+  return (dispatch, getState) => {
+    var todoRef = firebaseRef.child(`todos/${id}`);
+    var updates = {
+      completed,
+      completedAt: completed ? moment().unix() : null,
+    };
+
+    return todoRef.update(updates).then( () => {
+      dispatch(updateTodo(id, updates));
+    });
   };
 };
