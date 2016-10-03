@@ -138,7 +138,6 @@ describe ('Actions', () => {
 
         done();
       }, done);
-
     });
 
   });
