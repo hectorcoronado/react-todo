@@ -2,7 +2,7 @@ var React = require('react'),
     ReactDOM = require('react-dom'),
     {Provider} = require('react-redux'),
     expect = require('expect'),
-    $ = require('jQuery'),
+    $ = require('jquery'),
     TestUtils = require('react-addons-test-utils');
 
 import  {configure} from 'configureStore';
