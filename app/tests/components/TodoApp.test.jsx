@@ -6,9 +6,9 @@ var React = require('react'),
     TestUtils = require('react-addons-test-utils');
 
 import TodoList from 'TodoList';
+import {TodoApp} from 'TodoApp'
 
-var TodoApp = require('TodoApp'),
-    configureStore = require('configureStore');
+var configureStore = require('configureStore');
 
 describe('TodoApp', () => {
   it('should exist', () => {
