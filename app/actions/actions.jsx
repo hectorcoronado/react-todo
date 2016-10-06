@@ -96,8 +96,8 @@ export var startToggleTodo = (id, completed) => {
 
     return todoRef.update(updates)
       .then( () => {
-      dispatch(updateTodo(id, updates));
-    });
+        dispatch(updateTodo(id, updates));
+      });
   };
 };
 
@@ -120,5 +120,20 @@ export var startLogout = () => {
       .then( () => {
         console.log('Logged out!');
       });
+  };
+};
+
+
+export var login = (uid) => {
+  return {
+    type: 'LOGIN',
+    uid
+  };
+};
+
+
+export var logout = () => {
+  return {
+    type: 'LOGOUT'
   };
 };

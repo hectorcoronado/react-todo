@@ -12,7 +12,7 @@ export var searchTextReducer = (state = '', action) => {
 
 
 export var showCompletedReducer = (state = false, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'TOGGLE_SHOW_COMPLETED':
       return !state;
     default:
@@ -22,7 +22,7 @@ export var showCompletedReducer = (state = false, action) => {
 
 
 export var todosReducer = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'ADD_TODO':
       return [
         ...state,
@@ -46,5 +46,25 @@ export var todosReducer = (state = [], action) => {
       ]
     default:
       return state;
-  }
+  };
+};
+
+
+export var authReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'LOGIN':
+      return {
+        ...state,
+        auth: {
+          uid: action.uid
+        }
+      };
+    case 'LOGOUT':
+      return {
+        ...state,
+        auth: {}
+      };
+    default:
+      return state;
+  };
 };
