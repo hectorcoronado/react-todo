@@ -43,11 +43,15 @@ export var todosReducer = (state = [], action) => {
       return [
         ...state,
         ...action.todos
-      ]
+      ];
+    case 'LOGOUT':
+      return [];
     default:
       return state;
   };
 };
+
+// handler for LOGOUT that wipes all data when logged out
 
 
 export var authReducer = (state = {}, action) => {
