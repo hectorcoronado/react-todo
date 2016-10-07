@@ -99,4 +99,32 @@ describe('Reducers', () => {
 
   });
 
+
+  describe ('authReducer', () => {
+    it('should store user.uid on login', () =>{
+      var action = {
+        type: 'LOGIN',
+        uid: 12345
+      };
+
+      var res = reducers.authReducer(undefined, df(action));
+
+      expect(res).toEqual( {uid: action.uid} );
+    });
+
+    it('should clear auth object on logout', () => {
+      var authData = {
+        uid: 12345
+      }
+
+      var action = {
+        type: 'LOGOUT'
+      };
+
+      var res = reducers.authReducer(df(authData), df(action));
+
+      expect(res).toEqual({});
+    });
+  });
+
 });

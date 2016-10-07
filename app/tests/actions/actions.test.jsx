@@ -101,6 +101,33 @@ describe ('Actions', () => {
   });
 
 
+  it('should generate login action object', () => {
+    var action = {
+      type: 'LOGIN',
+      uid: '123456'
+    };
+
+    var res = actions.login(action.uid);
+
+    expect(res).toEqual(action);
+  });
+
+
+  it('should generate logout action object', () => {
+    var action = {
+      type: 'LOGOUT'
+    };
+
+    var res = actions.logout();
+
+    expect(res).toEqual(action);
+  })
+
+
+  /////////////////
+  // ASYNC TESTS //
+  /////////////////
+
   describe('Tests with Firebase todos', () => {
     var testTodoRef;
 
