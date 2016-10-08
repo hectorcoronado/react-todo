@@ -2,8 +2,13 @@
   background: $light-grey;
   border: 1px solid $light-grey-border;
   border-radius: 5px;
-  padding: 0;
+  box-shadow: $box-shadow;
   margin-bottom: 2rem;
+  padding: 0;
+
+  input {
+    border-radius: 5px;
+  }
 }
 
 
