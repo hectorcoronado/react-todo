@@ -22,7 +22,10 @@ export var TodoApp = React.createClass({
         <div className="page-actions">
           <a href="#" onClick={this.onLogout}>Logout</a>
         </div>
-        <h1 className="page-title">Todo App</h1>
+        <div className="page-actions text-left">
+          <p>Created by <a href="http://hectorcoronado.codes" target="_blank">Hector Coronado</a></p>
+        </div>
+        <h1 className="page-title">To-do</h1>
         <div className="row">
           <div className="column small-centered small-11 medium-6 large-5">
             <div className="container">
