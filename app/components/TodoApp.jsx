@@ -7,20 +7,20 @@ import TodoSearch from 'TodoSearch';
 import * as actions from 'actions';
 
 
-export var TodoApp = React.createClass({
+export class TodoApp extends React.Component {
   onLogout (e) {
     e.preventDefault();
     var {dispatch} = this.props;
 
     dispatch(actions.startLogout());
 
-  },
+  }
 
   render () {
     return (
       <div>
         <div className="page-actions">
-          <a href="#" onClick={this.onLogout}>Logout</a>
+          <a href="#" onClick={this.onLogout.bind(this)}>Logout</a>
         </div>
         <div className="page-actions text-left">
           <p>Created by <a href="http://hectorcoronado.codes" target="_blank">Hector Coronado</a></p>
@@ -38,6 +38,6 @@ export var TodoApp = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default Redux.connect()(TodoApp);
